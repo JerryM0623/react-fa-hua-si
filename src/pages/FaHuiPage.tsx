@@ -1,4 +1,4 @@
-function FashiPage() {
+function FaHuiPage() {
     return (
         <div>
             <p>这里是法事的内容。</p>
@@ -6,4 +6,4 @@ function FashiPage() {
     );
 }
 
-export default FashiPage;
+export default FaHuiPage;

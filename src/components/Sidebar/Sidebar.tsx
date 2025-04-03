@@ -1,7 +1,7 @@
 import styles from './Sidebar.module.css'
 import {useEffect} from "react"
 import {useMenusStore} from '../../store/useMenusStore.ts'
-import { sideMenus } from '../data/SideMenuIs.ts'
+import { sideMenus } from '../../data/SideMenus.ts'
 import {useNavigate} from 'react-router-dom'
 
 import type {MenuItem} from '../../types/menu.types.ts'

@@ -1,4 +1,4 @@
-import type { MenuItem } from '../../types/menu.types.ts'
+import type { MenuItem } from '../types/menu.types.ts'
 
 export const sideMenus: MenuItem[] = [
     {
