@@ -1,14 +1,5 @@
 import { create } from 'zustand'
-
-type MenuItem = {
-    id: number;
-    interfaceUrlId: number
-    name: string
-    sort: number
-    tenantId: number
-    topName: string
-    url: string
-}
+import type { MenuItem } from '../types/menu.types.ts'
 
 // 1. 定义 Store State 和 Actions 的类型 (推荐使用 TypeScript)
 type MenusStore = {

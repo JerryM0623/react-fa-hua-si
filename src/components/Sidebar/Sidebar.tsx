@@ -1,16 +1,7 @@
-import styles from './Sidebar.module.css';
-import {useEffect} from "react";
+import styles from './Sidebar.module.css'
+import {useEffect} from "react"
 import {useMenusStore} from '../../store/useMenusStore.ts'
-
-type MenuItem = {
-    id: number;
-    interfaceUrlId: number
-    name: string
-    sort: number
-    tenantId: number
-    topName: string
-    url: string
-}
+import type {MenuItem} from '../../types/menu.types.ts'
 
 function Sidebar() {
     const menuItems = useMenusStore((state) => state.menuItems);
@@ -18,7 +9,6 @@ function Sidebar() {
 
     const activeId = useMenusStore((state) => state.activeId);
     const setActiveId = useMenusStore((state) => state.setActiveId);
-
 
     useEffect(() => {
         const apiUrl = 'https://fsy.zhifo.net.cn/fosiyun/api/v1/tenant/operatingFloorUrl/all?tenantId=360';
