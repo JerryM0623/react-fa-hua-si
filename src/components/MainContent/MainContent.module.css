@@ -1,5 +1,31 @@
 .mainContent {
-    width: calc(1920px - 599px);
+    width: 1321px;
     height: 1080px;
     background: url("https://fsy.zhifo.net.cn/fahua/assets/bg-3dKJKWMA.png") no-repeat;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.header {
+    width: 1281px;
+    height: 104px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titleWrapper {
+    width: 389px;
+    height: 104px;
+    background: url("https://fsy.zhifo.net.cn/fahua/assets/header-name-NEr3rN5d.png") no-repeat center center / contain;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    font-family: cursive;
+    font-size: 54px;
+    color: #fff;
 }
