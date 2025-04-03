@@ -1,0 +1,5 @@
+.mainContent {
+    width: calc(1920px - 599px);
+    height: 1080px;
+    background: url("https://fsy.zhifo.net.cn/fahua/assets/bg-3dKJKWMA.png") no-repeat;
+}

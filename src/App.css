@@ -1,0 +1,5 @@
+.app-container {
+    display: flex;
+    width: 1920px;
+    height: 1080px; /* 占满整个视口高度 */
+}
