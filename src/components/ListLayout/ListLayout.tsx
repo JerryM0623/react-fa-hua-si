@@ -17,8 +17,8 @@ function ListLayout({ list }: ListLayoutProps) {
                         list.map(item => {
                             return (
                                 <li className={styles.listItem}>
-                                    <img className={styles.listItemIcon} src={item.coveImg} alt="" />
-                                    <span className={styles.listItemText}>{item.caption}</span>
+                                    <img className={styles.listItemIcon} src={item.coveImg || item.newsCoverImg} alt="" />
+                                    <span className={styles.listItemText}>{item.caption || item.headline}</span>
                                     <div className={styles.listItemButton}>详情</div>
                                 </li>
                             )

@@ -6,7 +6,7 @@ import FaHuiPage from "./pages/FaHuiPage.tsx";
 import FoshiPage from "./pages/FoShiPage.tsx";
 import SiWuPage from "./pages/SiWuPage.tsx";
 import FaWuPage from "./pages/FaWuPage.tsx";
-import HuoDongPage from "./pages/HuoDongPage.tsx";
+// import HuoDongPage from "./pages/HuoDongPage.tsx";
 import YiGongPage from "./pages/YiGongPage.tsx";
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
                       <Route path="foshi" element={<FoshiPage />} />
                       <Route path="siwu" element={<SiWuPage />} />
                       <Route path="fawu" element={<FaWuPage />} />
-                      <Route path="huodong" element={<HuoDongPage />} />
+                      {/* <Route path="huodong" element={<HuoDongPage />} /> */}
                       <Route path="yigong" element={<YiGongPage />} />
                   </Route>
                   {/* 其他顶级 Route */}
