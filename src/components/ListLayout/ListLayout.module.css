@@ -1,0 +1,36 @@
+.listWrapper {}
+
+.listItem {
+    width: 100%;
+    height: 180px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom: 1px solid #E4CA9C;
+}
+
+.listItemIcon {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+}
+
+.listItemText {
+    font-size: 40px;
+    margin-left: 50px;
+}
+
+.listItemButton {
+    width: 181px;
+    height: 76px;
+    line-height: 76px;
+    border-radius: 50px;
+    background-color: #e6a74f;
+    font-weight: 400;
+    font-size: 34px;
+    color: #333;
+    text-align: center;
+    font-family: cursive;
+    margin-right: 0;
+    margin-left: auto;
+}
