@@ -1,0 +1,31 @@
+.cardWrapper {
+    width: 1241px;
+    height: 876px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;;
+}
+
+.gridItem {
+    height: 438px;
+    background: url("https://fsy.zhifo.net.cn/fahua/assets/enrolled-list-nDjrIko_.png") no-repeat center center / contain;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.gridItemText {
+    font-family: cursive;
+    text-align: center;
+    font-size: 40px;
+    color: #333;
+    margin-top: 110px;
+}
+
+.gridItemIcon {
+    margin-top: 50px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    overflow: hidden;
+}
