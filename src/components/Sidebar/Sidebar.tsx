@@ -1,5 +1,6 @@
 import styles from './Sidebar.module.css';
-import {useEffect, useState} from "react"; // 使用 CSS Modules
+import {useEffect} from "react";
+import {useMenusStore} from '../../store/useMenusStore.ts'
 
 type MenuItem = {
     id: number;
@@ -12,8 +13,12 @@ type MenuItem = {
 }
 
 function Sidebar() {
-    const [menuItems, setMenuItems] = useState<MenuItem[]>([]);
-    const [activeId, setActiveId] = useState<number>(0)
+    const menuItems = useMenusStore((state) => state.menuItems);
+    const setMenuItems = useMenusStore((state) => state.setMenuItems);
+
+    const activeId = useMenusStore((state) => state.activeId);
+    const setActiveId = useMenusStore((state) => state.setActiveId);
+
 
     useEffect(() => {
         const apiUrl = 'https://fsy.zhifo.net.cn/fosiyun/api/v1/tenant/operatingFloorUrl/all?tenantId=360';
@@ -49,7 +54,7 @@ function Sidebar() {
         fetMenuItems()
     }, []) //空数组代表了这个 useeffect 只在初始化的时候裁回运行
 
-    const clickMenuItem = (id: number)=> {
+    const clickMenuItem = (id: number) => {
         console.log("点击了菜单，id：", id)
         if (activeId === id) return;
         setActiveId(id);
@@ -58,7 +63,8 @@ function Sidebar() {
     return (
         <div className={styles.sidebar}>
             <div className={styles.iconWrapper}>
-                <img className={styles.iconImage} src="https://fsy.zhifo.net.cn/fahua/assets/logo-E4Mcrmmh.png" alt="法华禅寺" />
+                <img className={styles.iconImage} src="https://fsy.zhifo.net.cn/fahua/assets/logo-E4Mcrmmh.png"
+                     alt="法华禅寺"/>
             </div>
             <ul className={styles.menuList}>
                 {
@@ -66,7 +72,7 @@ function Sidebar() {
                         return (
                             <li
                                 key={item.id}
-                                className={`${styles.menuItem} ${item.id ===  activeId? styles.active : ''}`}
+                                className={`${styles.menuItem} ${item.id === activeId ? styles.active : ''}`}
                                 onClick={() => clickMenuItem(item.id)}
                             >
                                 <span>{item.name}</span>
