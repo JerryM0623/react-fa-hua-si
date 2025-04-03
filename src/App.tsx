@@ -1,18 +1,37 @@
 import './App.css'
-import Sidebar from './components/Sidebar/Sidebar'; // 稍后创建
-import MainContent from './components/MainContent/MainContent';
-import RScaleScreen from "r-scale-screen"; // 稍后创建
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from "./components/Layout/Layout.tsx";
+import NotFoundPage from "./pages/NotFoundPage.tsx";
+import FaShiPage from "./pages/FaShiPage.tsx";
+import FoshiPage from "./pages/FoShiPage.tsx";
+import SiWuPage from "./pages/SiWuPage.tsx";
+import FaWuPage from "./pages/FaWuPage.tsx";
+import HuoDongPage from "./pages/HuoDongPage.tsx";
+import YiGongPage from "./pages/YiGongPage.tsx";
 
 function App() {
 
   return (
       <>
-          <RScaleScreen height={1080} width={1920}>
-              <div className="app-container">
-                  <MainContent /> {/* 内容区放在前面，方便 CSS 结构 */}
-                  <Sidebar />     {/* 侧边栏 */}
-              </div>
-          </RScaleScreen>
+          <BrowserRouter>
+              {/* 👇 Routes 包裹所有顶级 Route */}
+              <Routes>
+                  {/* 父 Route (Layout Route) 也是 Routes 的直接子元素 */}
+                  <Route path="/" element={<Layout />}>
+                      {/* 👇 嵌套的 Route 也是其直接父 Route 的子元素，这没问题 */}
+                      {/* 这些最终也是通过 <Outlet/> 在 <Routes> 的上下文中渲染的 */}
+                      <Route path="fahui" element={<FaShiPage />} />
+                      <Route path="foshi" element={<FoshiPage />} />
+                      <Route path="siwu" element={<SiWuPage />} />
+                      <Route path="fawu" element={<FaWuPage />} />
+                      <Route path="huodong" element={<HuoDongPage />} />
+                      <Route path="yigong" element={<YiGongPage />} />
+                  </Route>
+                  {/* 其他顶级 Route */}
+                  {/* <Route path="/login" element={<LoginPage />} /> */}
+                  <Route path="*" element={<NotFoundPage />} />
+              </Routes>
+          </BrowserRouter>
       </>
   )
 }

@@ -1,9 +1,14 @@
 import styles from './Sidebar.module.css'
 import {useEffect} from "react"
 import {useMenusStore} from '../../store/useMenusStore.ts'
+import { sideMenus } from '../data/SideMenuIs.ts'
+import {useNavigate} from 'react-router-dom'
+
 import type {MenuItem} from '../../types/menu.types.ts'
 
 function Sidebar() {
+    const navigate = useNavigate(); // 获取 navigate 函数
+
     const menuItems = useMenusStore((state) => state.menuItems);
     const setMenuItems = useMenusStore((state) => state.setMenuItems);
 
@@ -28,14 +33,8 @@ function Sidebar() {
                     throw new Error(`获取菜单数据异常，错误码：${data.status}`);
                 }
 
-                const fetchedData = data.data;
-
-                if (Array.isArray(fetchedData)) {
-                    setMenuItems(fetchedData as MenuItem[]); // Update state with fetched data
-                    setActiveId(fetchedData[0].id);
-                } else {
-                    throw new Error("获取的菜单数据异常：非数组数据");
-                }
+                setMenuItems(sideMenus as MenuItem[]);
+                clickMenuItem(sideMenus[0].id, sideMenus[0].url)
             } catch (e) {
                 console.error("获取菜单列表信息失败:", e);
             }
@@ -44,10 +43,11 @@ function Sidebar() {
         fetMenuItems()
     }, []) //空数组代表了这个 useeffect 只在初始化的时候裁回运行
 
-    const clickMenuItem = (id: number) => {
+    const clickMenuItem = (id: number, url: string) => {
         console.log("点击了菜单，id：", id)
         if (activeId === id) return;
         setActiveId(id);
+        navigate(`/${url}`) // 跳转页面
     }
 
     return (
@@ -63,7 +63,7 @@ function Sidebar() {
                             <li
                                 key={item.id}
                                 className={`${styles.menuItem} ${item.id === activeId ? styles.active : ''}`}
-                                onClick={() => clickMenuItem(item.id)}
+                                onClick={() => clickMenuItem(item.id, item.url)}
                             >
                                 <span>{item.name}</span>
                             </li>

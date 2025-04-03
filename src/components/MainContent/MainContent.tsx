@@ -1,3 +1,4 @@
+import { Outlet } from 'react-router-dom';
 import styles from './MainContent.module.css';
 import {useMenusStore} from '../../store/useMenusStore.ts'
 
@@ -6,7 +7,7 @@ function MainContent() {
     const activeId = useMenusStore((state) => state.activeId);
 
     // 2. 直接在渲染逻辑中计算 title
-    let title = "法华禅寺"; // 设置一个默认值或加载状态
+    let title = ""; // 设置一个默认值或加载状态
     try {
         const activeMenuItem = menuItems.find(item => item.id === activeId);
         if (activeMenuItem && activeMenuItem.name) {
@@ -29,6 +30,9 @@ function MainContent() {
                    <span className={styles.title}>{title}</span>
                </div>
            </header>
+            <main className={styles.pages}>
+                <Outlet />
+            </main>
         </div>
     );
 }
