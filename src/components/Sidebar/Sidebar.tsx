@@ -34,7 +34,7 @@ function Sidebar() {
                 }
 
                 setMenuItems(sideMenus as MenuItem[]);
-                clickMenuItem(sideMenus[0].id, sideMenus[0].url)
+                setActiveId(sideMenus[0].id);
             } catch (e) {
                 console.error("获取菜单列表信息失败:", e);
             }

@@ -1,5 +1,5 @@
 import './App.css'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from "./components/Layout/Layout.tsx";
 import NotFoundPage from "./pages/NotFoundPage.tsx";
 import FaHuiPage from "./pages/FaHuiPage.tsx";
@@ -20,6 +20,14 @@ function App() {
                   <Route path="/" element={<Layout />}>
                       {/* 👇 嵌套的 Route 也是其直接父 Route 的子元素，这没问题 */}
                       {/* 这些最终也是通过 <Outlet/> 在 <Routes> 的上下文中渲染的 */}
+
+                      {/* 当访问的路径完全匹配父路由的 path ("/") 时 */}
+                      {/* 使用 <Navigate> 组件进行重定向 */}
+                      <Route
+                          index // 标记为索引路由
+                          element={<Navigate to="/fahui" replace />} // 指定重定向的目标和方式
+                      />
+
                       <Route path="fahui" element={<FaHuiPage />} />
                       <Route path="foshi" element={<FoshiPage />} />
                       <Route path="siwu" element={<SiWuPage />} />
