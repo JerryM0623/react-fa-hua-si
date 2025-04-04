@@ -2,9 +2,7 @@ import ListLayout from '../components/ListLayout/ListLayout.tsx'
 import {DetailType} from "../types/detail.types.ts";
 import CommonDetailLayout from "../components/CommonDetailLayout/CommonDetailLayout.tsx";
 import {useBackButtonStore} from "../store/useBackButtonStore.ts"
-
 import {useEffect, useState} from "react";
-
 import type {ListItem} from '../types/list.types.ts'
 
 function FaHuiPage() {
