@@ -10,7 +10,7 @@ function QRCodeDetailLayout({detailInfo}: QRCodeDetailLayoutProps) {
     return (
         <div className={styles.qrcodeDetailWrapper}>
             <section className={styles.qrcodeWrapper}>
-                <span style={{fontSize: "35px", marginBottom: "50px"}}>{detailInfo.recruitmentConditions}</span>
+                <span style={{fontSize: "35px", marginBottom: "40px", lineHeight: 1.3}}>{detailInfo.recruitmentConditions}</span>
                 <img src={detailInfo.urlPath || "https://fsy.zhifo.net.cn/fahua/assets/qr-img-TmmCT5v_.png"} alt="" />
                 <span>{detailInfo.writing || "请扫码报名"}</span>
             </section>

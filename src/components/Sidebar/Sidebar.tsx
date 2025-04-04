@@ -3,8 +3,8 @@ import {useEffect} from "react"
 import {useMenusStore} from '../../store/useMenusStore.ts'
 import { sideMenus } from '../../data/SideMenus.ts'
 import { useNavigate } from 'react-router-dom'
-
 import type {MenuItem} from '../../types/menu.types.ts'
+import {useBackButtonStore} from '../../store/useBackButtonStore.ts'
 
 function Sidebar() {
     const navigate = useNavigate(); // 获取 navigate 函数
@@ -14,6 +14,8 @@ function Sidebar() {
 
     const activeId = useMenusStore((state) => state.activeId);
     const setActiveId = useMenusStore((state) => state.setActiveId);
+
+    const backButtonStore = useBackButtonStore();
 
     useEffect(() => {
         const apiUrl = 'https://fsy.zhifo.net.cn/fosiyun/api/v1/tenant/operatingFloorUrl/all?tenantId=360';
@@ -46,6 +48,8 @@ function Sidebar() {
     const clickMenuItem = (id: number, url: string) => {
         console.log("点击了菜单，id：", id)
         if (activeId === id) return;
+        backButtonStore.changeButtonVisible(false)
+        backButtonStore.setButtonCallFunc(null)
         setActiveId(id);
         navigate(`/${url}`) // 跳转页面
     }
