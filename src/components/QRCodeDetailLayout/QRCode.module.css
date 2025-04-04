@@ -1,0 +1,45 @@
+.qrcodeDetailWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.qrcodeWrapper {
+    width: 490px;
+    height: 810px;
+    background: url("https://fsy.zhifo.net.cn/fahua/assets/enrolled-detail-bg--1kSVLv3.png") no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.qrcodeWrapper img {
+    width: 243px;
+    height: 243px;
+    margin-bottom: 50px;
+}
+
+.qrcodeWrapper span {
+    font-size: 40px;
+    color: #333;
+}
+
+.contentWrapper {
+    flex: 1;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.carouselWrapper {}
+
+.imgList {}
+
+.imgListItem {}
+
+.imgListItem img {
+    width: 100%;
+}
+
+.richTextWrapper {}
