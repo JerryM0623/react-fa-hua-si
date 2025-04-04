@@ -11,23 +11,10 @@ function YiGongPage() {
     const [list, setList] = useState<ListItem[]>([])
     const [openDetail, setOpenDetail] = useState<boolean>(false)
     const [detailInfo, setDetailInfo] = useState<DetailType>({
-        blessingArr: "",
-        caption: "",
-        coveImg: "",
-        createTime: "",
-        details: "",
-        djJian: 0,
-        greetings: 0,
-        id: 0,
-        isBuddhism: 0,
-        paymentId: 0,
-        projectHeadline: "",
-        sort: 0,
-        status: 0,
-        tenantId: 0,
-        tenantItemsImgList: [],
-        type: 0,
-        typeName: ""
+        id: -9999,
+        status: -9999,
+        tenantId: -9999,
+        createTime: ""
     })
 
     useEffect(() => {

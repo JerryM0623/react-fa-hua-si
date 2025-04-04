@@ -37,12 +37,12 @@ export type DetailType = {
     slideshowList?: TenantListImgType[]
     startDate?: string
     // 第四种（义工）
-    beginTime: string
-    delTF: number
-    expireTime: string
-    headline: string
-    newsCoverImg: string
-    recruitContent: string
-    recruitmentConditions: string
-    updateTime: string
+    beginTime?: string
+    delTF?: number
+    expireTime?: string
+    headline?: string
+    newsCoverImg?: string
+    recruitContent?: string
+    recruitmentConditions?: string
+    updateTime?: string
 }
