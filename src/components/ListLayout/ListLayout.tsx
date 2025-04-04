@@ -4,9 +4,10 @@ import NoData from "../NoData/NoData.tsx";
 
 interface ListLayoutProps {
     list: ListItem[];
+    onOpenItemDetail: (id: number) => void;
 }
 
-function ListLayout({ list }: ListLayoutProps) {
+function ListLayout({ list, onOpenItemDetail }: ListLayoutProps) {
     return (
         <>
             {list.length <= 0 ? (
@@ -19,7 +20,7 @@ function ListLayout({ list }: ListLayoutProps) {
                                 <li className={styles.listItem} key={item.id}>
                                     <img className={styles.listItemIcon} src={item.coveImg || item.headImage || item.newsCoverImg} alt="" />
                                     <span className={styles.listItemText}>{item.caption || item.name || item.headline}</span>
-                                    <div className={styles.listItemButton}>详情</div>
+                                    <div className={styles.listItemButton} onClick={() => onOpenItemDetail(item.id)}>详情</div>
                                 </li>
                             )
                         })

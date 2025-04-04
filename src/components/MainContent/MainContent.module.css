@@ -17,6 +17,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+}
+
+.backButton {
+    width: 61px;
+    height: 61px;
+    position: absolute;
+    left: 0;
 }
 
 .titleWrapper {
@@ -26,6 +34,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto;
 }
 
 .title {

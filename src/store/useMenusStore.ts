@@ -9,13 +9,15 @@ type MenusStore = {
     setActiveId: (id: number) => void;
 }
 
-export const useMenusStore = create<MenusStore>((set) => ({
-    menuItems: [],
-    activeId: -999, // 初始化给 -999 一旦通过后端进行了初始化就会更新
-    setMenuItems: (menuItems: MenuItem[]) => {
-        set({menuItems: menuItems})
-    },
-    setActiveId: (id: number) => {
-        set({activeId: id})
+export const useMenusStore = create<MenusStore>((set) => {
+    return {
+        menuItems: [],
+        activeId: -999, // 初始化给 -999 一旦通过后端进行了初始化就会更新
+        setMenuItems: (menuItems: MenuItem[]) => {
+            set({menuItems: menuItems})
+        },
+        setActiveId: (id: number) => {
+            set({activeId: id})
+        }
     }
-}));
+});
