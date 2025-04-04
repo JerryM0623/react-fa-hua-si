@@ -2,7 +2,7 @@ import styles from './Sidebar.module.css'
 import {useEffect} from "react"
 import {useMenusStore} from '../../store/useMenusStore.ts'
 import { sideMenus } from '../../data/SideMenus.ts'
-import {useNavigate} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 import type {MenuItem} from '../../types/menu.types.ts'
 
@@ -34,7 +34,7 @@ function Sidebar() {
                 }
 
                 setMenuItems(sideMenus as MenuItem[]);
-                setActiveId(sideMenus[0].id);
+                clickMenuItem(sideMenus[0].id, sideMenus[0].url)
             } catch (e) {
                 console.error("获取菜单列表信息失败:", e);
             }
